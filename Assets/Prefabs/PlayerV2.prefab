@@ -74,6 +74,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   magnetRangeObject: {fileID: 5105208917844498486}
+  isMagnetActive: 0
 --- !u!1 &5105208917844498486
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6150493990574921983
 BoxCollider2D:
   m_ObjectHideFlags: 0

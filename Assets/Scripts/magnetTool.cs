@@ -9,10 +9,11 @@ public class magnetTool : MonoBehaviour
     [SerializeField] InputAction aimMagnetAction;
     [SerializeField] InputAction prepareMagnetAction;
     [SerializeField] GameObject magnetRangeObject;
+    public bool isMagnetActive = false;
 
     private Vector2 aimMagnetPosition;
     private Collider2D magnetCollider;
-    private bool isMagnetActive = false;
+    private SpriteRenderer magnetColliderSprite;
 
     private void OnEnable()
     {
@@ -35,6 +36,7 @@ public class magnetTool : MonoBehaviour
     void Start()
     {
         magnetCollider = magnetRangeObject.GetComponent<Collider2D>();
+        magnetColliderSprite = magnetRangeObject.GetComponent<SpriteRenderer>();
         magnetCollider.enabled = false;
     }
 
@@ -55,11 +57,13 @@ public class magnetTool : MonoBehaviour
             {
                 if (isMagnetActive)
                 {
+                    magnetColliderSprite.enabled = false;
                     magnetCollider.enabled = false;
                     isMagnetActive = false;
                 }
                 else
                 {
+                    magnetColliderSprite.enabled = true;
                     magnetCollider.enabled = true;
                     isMagnetActive = true;
                 }
@@ -71,6 +75,7 @@ public class magnetTool : MonoBehaviour
         else
         {
             magnetCollider.enabled = false;
+            magnetColliderSprite.enabled = false;
             isMagnetActive = false;
         }
     }
@@ -89,4 +94,5 @@ public class magnetTool : MonoBehaviour
         Vector2 lookDirection = mouseWorldPosition - transform.position;
         return Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
     }
+
 }
