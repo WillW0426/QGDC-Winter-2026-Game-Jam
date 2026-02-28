@@ -26,7 +26,6 @@ public class magneticObjectScript : MonoBehaviour
             Vector3 movementDirection = (magnetPosition - transform.position).normalized;
             rb.linearVelocity = new Vector2(movementDirection.x * magneticPullStrengthX, movementDirection.y * magneticPullStrengthY);
         }
-        Debug.Log(isBeingPulled);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

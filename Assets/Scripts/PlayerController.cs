@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private void MoveAction_started(InputAction.CallbackContext obj)
     {
         animator.SetBool("IsMoving", true);
-        Debug.Log(moveAmount.x);
+        //Debug.Log(moveAmount.x);
 
         Vector2 moveInput = obj.ReadValue<Vector2>();
 
