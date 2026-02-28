@@ -3,28 +3,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerAnimator : MonoBehaviour
 {
+    [Header("Set Up")]
     [SerializeField] private Transform playerModel;
-    public InputActionAsset inputActions;
+    [SerializeField] private InputActionAsset inputActions;
+    [SerializeField] private groundCheck groundChecker;
+
+    [Header("Animatiors")]
+    [SerializeField] private Animator animator;
+
     private InputAction moveAction;
-
-    private PlayerController playerController;
     private Rigidbody2D rb;
-
-    public groundCheck groundChecker;
-
-    private Animator animator;
     private Vector3 defaultScale;
 
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 
         moveAction = InputSystem.actions.FindAction("Player/Move");
         defaultScale = playerModel.localScale;
 
-        groundChecker = GetComponent<groundCheck>();
+        groundChecker = GetComponentInChildren<groundCheck>();
     }
 
     private void Start()
