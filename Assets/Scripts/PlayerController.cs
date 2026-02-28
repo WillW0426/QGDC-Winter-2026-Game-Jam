@@ -93,31 +93,11 @@ public class PlayerController : MonoBehaviour
         // get movement inputs
         moveAmount = moveAction.ReadValue<Vector2>();
     }
-    /*
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            RaycastHit2D rcHit = Physics2D.BoxCast(transform.position, new Vector2(1f, 1f), 0f, Vector2.down, downwardRaycastDistance, groundLayerMask);
-            //Debug.DrawRay(transform.position, Vector2.down, Color.blue, downwardRaycastDistance);
-            if (rcHit.collider != null)
-            {
-                isGrounded = true;
-            }
+    
 
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.DrawRay(transform.position, Vector2.down, Color.blue, downwardRaycastDistance);
-        isGrounded = false;
-    }
-    */
     // apply walking movement
     private void FixedUpdate()
     {
-        //transform.Translate(new Vector2(moveAmount.x, 0) * moveSpeed * Time.deltaTime);
         rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
     }
     
