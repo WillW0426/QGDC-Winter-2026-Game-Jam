@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 
     public InputActionAsset inputActions;
     public float downwardRaycastDistance = 1f;
+    public GameObject groundCheck;
     public LayerMask groundLayerMask;
 
     private InputAction moveAction;
@@ -50,12 +51,12 @@ public class PlayerController : MonoBehaviour
     {
         // get movement inputs
         moveAmount = moveAction.ReadValue<Vector2>();
-        if (jumpAction.WasPressedThisFrame() && isGrounded)
+        if (jumpAction.WasPressedThisFrame() && groundCheck.GetComponent<groundCheck>().isGrounded == true)
         {
             Jump();
         }
     }
-
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -75,13 +76,14 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down, Color.blue, downwardRaycastDistance);
         isGrounded = false;
     }
-
+    */
     // apply walking movement
     private void FixedUpdate()
     {
-        transform.Translate(new Vector2(moveAmount.x, 0) * moveSpeed * Time.deltaTime);
+        //transform.Translate(new Vector2(moveAmount.x, 0) * moveSpeed * Time.deltaTime);
+        rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
     }
-
+    
     public void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
