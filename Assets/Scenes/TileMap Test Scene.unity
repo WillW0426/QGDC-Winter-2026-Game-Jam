@@ -873,9 +873,9 @@ GameObject:
   - component: {fileID: 1015769396}
   - component: {fileID: 1015769395}
   - component: {fileID: 1015769394}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PhysicalTiles
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -949,9 +949,9 @@ CompositeCollider2D:
       - X: -80000000
         Y: -30000000
       - X: -80000000
-        Y: -20000000
+        Y: 40000000
       - X: -90000000
-        Y: -20000000
+        Y: 40000000
       - X: -90000000
         Y: -40000000
       - X: 90000000
@@ -965,8 +965,8 @@ CompositeCollider2D:
       - {x: 8, y: -2.0000293}
       - {x: 7.9999704, y: -3}
       - {x: -8, y: -2.9999707}
-      - {x: -8.00003, y: -2}
-      - {x: -9, y: -2.0000293}
+      - {x: -8.00003, y: 4}
+      - {x: -9, y: 3.999971}
       - {x: -8.99997, y: -4}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
@@ -2082,6 +2082,7 @@ GameObject:
   - component: {fileID: 1818887505}
   - component: {fileID: 1818887501}
   - component: {fileID: 1818887506}
+  - component: {fileID: 1818887507}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -2142,7 +2143,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 03551e0f915921947a0fd4c27c011098, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2176,7 +2177,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.97}
   m_EdgeRadius: 0
 --- !u!1 &1954845826
 GameObject:
