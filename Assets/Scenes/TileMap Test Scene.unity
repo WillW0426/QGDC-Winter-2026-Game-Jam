@@ -374,6 +374,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1411026751}
+  - {fileID: 107535862}
+  - {fileID: 1511587800}
   - {fileID: 933996706}
   - {fileID: 7631465604529646738}
   - {fileID: 4193667491996198232}
