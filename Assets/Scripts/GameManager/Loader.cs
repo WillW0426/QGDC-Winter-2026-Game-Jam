@@ -6,7 +6,12 @@ public static class Loader
     {
         MainMenu,
         LoadingScene,
-        TileMapTestScene
+        TileMapTestScene,
+        Level1,
+        Level2,
+        Level3,
+        Level4,
+        Level5
     }
 
 
@@ -21,7 +26,13 @@ public static class Loader
 
     public static void LoaderCallback()
     {
-        SceneManager.LoadScene(targetScene.ToString());
+        if (targetScene == Scene.TileMapTestScene)
+        {
+            SceneManager.LoadScene("TileMap Test Scene");
+        } else
+        {
+            SceneManager.LoadScene(targetScene.ToString());
+        }
     }
 }
 
