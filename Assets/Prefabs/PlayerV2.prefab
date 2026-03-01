@@ -349,9 +349,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7442687397408855784}
   - component: {fileID: 6279911223815944598}
+  - component: {fileID: 2747803138567476327}
   - component: {fileID: 727351225193719336}
   - component: {fileID: 4191967928892401214}
-  - component: {fileID: 2747803138567476327}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Untagged
@@ -398,6 +398,22 @@ MonoBehaviour:
   playerModel: {fileID: 7491463665795375284}
   moveSpeed: 5
   jumpForce: 5
+--- !u!114 &2747803138567476327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5902132862505154131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a0e45733c277348b77c6f9de12436b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  playerModel: {fileID: 7491463665795375284}
+  inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  groundChecker: {fileID: 2128872418693924753}
+  animator: {fileID: 1138908842900773982}
 --- !u!50 &727351225193719336
 Rigidbody2D:
   serializedVersion: 5
@@ -462,21 +478,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.05}
   m_Size: {x: 0.5, y: 1.03}
   m_Direction: 0
---- !u!114 &2747803138567476327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5902132862505154131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a0e45733c277348b77c6f9de12436b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  playerModel: {fileID: 0}
-  inputActions: {fileID: 0}
-  groundChecker: {fileID: 0}
 --- !u!1 &6258883992104656016
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +647,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fc676b8daec9cd479693afe2211e1a8, type: 3}
+--- !u!95 &1138908842900773982 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 194652326289063472, guid: 9fc676b8daec9cd479693afe2211e1a8, type: 3}
+  m_PrefabInstance: {fileID: 972140681618219630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7491463665795375284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7677153366106292954, guid: 9fc676b8daec9cd479693afe2211e1a8, type: 3}
