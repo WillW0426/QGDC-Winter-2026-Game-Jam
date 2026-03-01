@@ -12,7 +12,9 @@ public class BenchScript : MonoBehaviour
     private InputAction interactAction;
     private InputAction carryAction;
     public float carryOffset = 1;
-    
+
+    private bool isPlayerCarrying;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,12 +48,14 @@ public class BenchScript : MonoBehaviour
                 sit();
             }
             else
-            {
+            {   
                 stand();
             }
         }
 
-        if (carryAction.WasPressedThisFrame() && playerNear)
+        if (playerObject != null) isPlayerCarrying = playerObject.GetComponent<PlayerController>().carrying;
+
+        if (carryAction.WasPressedThisFrame() && playerNear && isPlayerCarrying)
         {
             if (!beingCarried)
             {
@@ -85,6 +89,7 @@ public class BenchScript : MonoBehaviour
         {
             playerNear = false;
             playerObject = null;
+            isPlayerCarrying = false;
         }
     }
     private void sit()

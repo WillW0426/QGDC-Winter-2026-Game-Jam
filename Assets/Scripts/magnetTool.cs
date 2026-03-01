@@ -5,14 +5,20 @@ public class magnetTool : MonoBehaviour
 {
     public InputActionAsset inputActions;
 
+
     [SerializeField] InputAction useMagnetAction;
     [SerializeField] InputAction aimMagnetAction;
     [SerializeField] InputAction prepareMagnetAction;
+    private InputAction carryAction;
+
+    [Header("Required Game Objects")]
     [SerializeField] GameObject magnetRangeObject;
     [SerializeField] GameObject magnetModel;
+    [SerializeField] private GameObject playerModelHands;
     public bool isMagnetActive = false;
 
     private Vector2 aimMagnetPosition;
+    private PlayerController playerController;
     private Collider2D magnetCollider;
     private SpriteRenderer magnetColliderSprite;
 
@@ -28,9 +34,12 @@ public class magnetTool : MonoBehaviour
 
     private void Awake()
     {
+        playerController = GetComponentInParent<PlayerController>();
+
         useMagnetAction = InputSystem.actions.FindAction("Player/UseMagnet");
         aimMagnetAction = InputSystem.actions.FindAction("Player/AimMagnet");
         prepareMagnetAction = InputSystem.actions.FindAction("Player/PrepareMagnet");
+        carryAction = InputSystem.actions.FindAction("Player/Carry");
         magnetModel.SetActive(false);
     }
 
@@ -47,7 +56,7 @@ public class magnetTool : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (prepareMagnetAction.IsPressed())
+        if (prepareMagnetAction.IsPressed() && !playerController.carrying)
         {
 
             // Get mouse angle
@@ -58,6 +67,7 @@ public class magnetTool : MonoBehaviour
 
             //Show the Magnet Model
             magnetModel.SetActive(true);
+            playerModelHands.SetActive(false);
 
             // turn on / off magnet on button press by enabling and disabling the GameObject that contains the magnet collider and sprite renderer
             if (useMagnetAction.IsPressed())
@@ -93,6 +103,7 @@ public class magnetTool : MonoBehaviour
             isMagnetActive = false;
 
             magnetModel.SetActive(false);
+            playerModelHands.SetActive(true);
         }
     }
 

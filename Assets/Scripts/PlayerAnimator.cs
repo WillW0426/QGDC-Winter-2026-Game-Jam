@@ -5,6 +5,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     [Header("Set Up")]
     [SerializeField] private Transform playerModel;
+
     [SerializeField] private InputActionAsset inputActions;
     [SerializeField] private groundCheck groundChecker;
 
@@ -13,12 +14,15 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator handAnimator;
 
     private InputAction moveAction;
+
     private Rigidbody2D rb;
     private Vector3 defaultScale;
 
+    private PlayerController playerController;
 
     private void Awake()
     {
+        playerController = GetComponentInParent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
 
         moveAction = InputSystem.actions.FindAction("Player/Move");
@@ -37,6 +41,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         bodyAnimator.SetBool("Grounded", groundChecker.isGrounded);
         handAnimator.SetBool("Grounded", groundChecker.isGrounded);
+        handAnimator.SetBool("IsCarrying", playerController.carrying);
 
         bodyAnimator.SetFloat("YVelocity", rb.linearVelocity.y);
     }
