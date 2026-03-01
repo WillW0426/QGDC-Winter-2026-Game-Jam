@@ -6,10 +6,14 @@ public class BenchScript : MonoBehaviour
     public GameObject exitPosition;
     [SerializeField] private bool playerNear = false;
     [SerializeField] private bool sitting = false;
+    [SerializeField] private bool beingCarried = false;
     public GameObject playerObject;
     public InputActionAsset inputActions;
     private InputAction interactAction;
+    private InputAction carryAction;
+    public float carryOffset = 1;
     
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnEnable()
@@ -25,6 +29,7 @@ public class BenchScript : MonoBehaviour
     private void Awake()
     {
         interactAction = InputSystem.actions.FindAction("Player/Interact");
+        carryAction = InputSystem.actions.FindAction("Player/Carry");
     }
     void Start()
     {
@@ -34,7 +39,7 @@ public class BenchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (interactAction.WasPressedThisFrame() && playerNear)
+        if (interactAction.WasPressedThisFrame() && playerNear && !beingCarried)
         {
             if (!sitting)
             {
@@ -44,6 +49,25 @@ public class BenchScript : MonoBehaviour
             {
                 stand();
             }
+        }
+
+        if (carryAction.WasPressedThisFrame() && playerNear)
+        {
+            if (!beingCarried)
+            {
+                beingCarried = true;
+                playerObject.GetComponent<PlayerController>().carrying = true;
+            }
+            else
+            {
+                beingCarried = false;
+                playerObject.GetComponent<PlayerController>().carrying = false;
+            }
+        }
+
+        if (beingCarried)
+        {
+            gameObject.transform.position = playerObject.transform.position + new Vector3(0f, 1 * carryOffset, 0f);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -67,7 +91,7 @@ public class BenchScript : MonoBehaviour
     {
         playerObject.transform.position = gameObject.transform.position + new Vector3(0f, 0.5f, 0f);
         Debug.Log("Fuck");
-        playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+        playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
         Debug.Log("Fuck2");
         sitting = true;
         Debug.Log("Fuck3");
@@ -77,7 +101,7 @@ public class BenchScript : MonoBehaviour
     {
         playerObject.transform.position = exitPosition.transform.position;
         Debug.Log("Fuck4");
-        playerObject.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePosition;
+        playerObject.GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
         Debug.Log("Fuck5");
         sitting = false;
         Debug.Log("Fuck6");

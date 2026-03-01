@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayerMask;
 
     [SerializeField] private Transform playerModel;
+    public bool carrying = false;
 
     private InputAction moveAction;
     private InputAction jumpAction;
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void JumpAction_performed(InputAction.CallbackContext obj)
     {
-        if (groundCheck.GetComponent<groundCheck>().isGrounded == true)
+        if (groundCheck.GetComponent<groundCheck>().isGrounded == true && !carrying)
         {
             Jump();
         }
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
     // apply walking movement
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
     }
     
     private void Jump()

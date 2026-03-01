@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 2747803138567476327}
   m_Layer: 0
   m_Name: PlayerV2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,6 +396,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   playerModel: {fileID: 7491463665795375284}
+  carrying: 0
   moveSpeed: 5
   jumpForce: 5
 --- !u!50 &727351225193719336
@@ -477,6 +478,7 @@ MonoBehaviour:
   playerModel: {fileID: 0}
   inputActions: {fileID: 0}
   groundChecker: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &6258883992104656016
 GameObject:
   m_ObjectHideFlags: 0
