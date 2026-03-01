@@ -5607,6 +5607,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 9159313545222646228, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4431155566492447754, guid: 2d4c322323d0b45428351b6e579b1e15, type: 3}
+    - target: {fileID: 9159313545222646228, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159313545222646228, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159313545222646228, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159313545222646228, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9196126601049826026, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 9196126601049826026, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 9196126601049826026, guid: 7bee7a1bef7551d499ae669cd3f6ee79, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
