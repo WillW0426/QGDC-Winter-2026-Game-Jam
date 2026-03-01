@@ -31,7 +31,7 @@ public class PressurePlateScript : MonoBehaviour
             animator.SetBool("IsPressed", false);
             foreach (GameObject door in linkedDoors)
             {
-                door.SetActive(true);
+                if (door != null) door.SetActive(true);
             }
         }
     }

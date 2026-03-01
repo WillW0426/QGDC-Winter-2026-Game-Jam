@@ -45,7 +45,7 @@ public class GoalLocation : MonoBehaviour
         if (isBeingMagnetized)
         {
             setHealth(-20f);
-            GlitchController.Instance.TriggerBurst(0.4f, 5f, 0.1f);
+            if (GlitchController.Instance != null) GlitchController.Instance.TriggerBurst(0.4f, 5f, 0.1f);
 
             Debug.Log("Health: " + health);
 
