@@ -20,7 +20,7 @@ public class GlitchEventTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (GlitchController.Instance != null) GlitchController.Instance.TriggerBurst(0.5f, 10f, 0.2f);
+            if (GlitchController.Instance != null) GlitchController.Instance.TriggerBurst(0.5f,  10f, 0.2f);
 
             foreach (GameObject obj in objectsToDestroy)
             {
