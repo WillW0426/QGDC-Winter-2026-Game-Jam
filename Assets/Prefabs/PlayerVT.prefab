@@ -413,6 +413,7 @@ MonoBehaviour:
     m_Flags: 0
   magnetRangeObject: {fileID: 5863991632022859484}
   magnetModel: {fileID: 6560067291782468941}
+  playerModelHands: {fileID: 5511395097538522859}
   isMagnetActive: 0
 --- !u!1 &4609397925241825120
 GameObject:
