@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8655645160680631316}
   - component: {fileID: 2874218921924915198}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MainBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 1993769390210556259}
   - component: {fileID: 2256031295445515488}
   - component: {fileID: 6777507795219726069}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8150732781449693527}
   - component: {fileID: 478042881735410087}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: R_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3495032787398698428}
   - component: {fileID: 1406923013604913683}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LEar_Viry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816525296205103719}
   - component: {fileID: 934221539979151985}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MagnetRotationPoint
   m_TagString: Magnet
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5639287855345769587}
   - component: {fileID: 2093656203278696671}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Viree_Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367210379744187929}
   - component: {fileID: 3763719969710893344}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Body_Viry_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 5597300580569570862}
   - component: {fileID: 6840777869584271861}
   - component: {fileID: 6213182339753443884}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MagnetEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5445,7 +5445,7 @@ GameObject:
   - component: {fileID: 7563656419107925384}
   - component: {fileID: 2275182642483943130}
   - component: {fileID: 4632841891567630091}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PlayerVT
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5571,7 +5571,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.05}
-  m_Size: {x: 0.5, y: 1.03}
+  m_Size: {x: 0.7, y: 1.03}
   m_Direction: 0
 --- !u!1 &5511395097538522859
 GameObject:
@@ -5583,7 +5583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1338135976914819215}
   - component: {fileID: 7114501010152397299}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5640,7 +5640,7 @@ GameObject:
   - component: {fileID: 8322796154252799309}
   - component: {fileID: 4696111597833622890}
   - component: {fileID: 691330231861943957}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: MagnetRange
   m_TagString: Magnet
   m_Icon: {fileID: 0}
@@ -5777,7 +5777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5000830430515543998}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5811,7 +5811,7 @@ GameObject:
   - component: {fileID: 5144481784020579312}
   - component: {fileID: 9064667546608994234}
   - component: {fileID: 240430985384919324}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Eyes_Viry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5916,7 +5916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4698878638998037804}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5949,7 +5949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5211205253690222114}
   - component: {fileID: 4176813665511962196}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: REar_Viree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6039,7 +6039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7007587945439770482}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Viree_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6074,7 +6074,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6130800769653953265}
   - component: {fileID: 4689468140257131137}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: L_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6165,7 +6165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4310007951262114934}
   - component: {fileID: 2754137912671994446}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Magnet_Viree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6256,7 +6256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7480015478046839417}
   - component: {fileID: 301758817333353498}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Viree_Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
