@@ -30,8 +30,6 @@ public class CollisionLaunchScript : MonoBehaviour
         if (IsLaunchableObject(collision.gameObject))
         {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log("Launch Angle: " + launchAngle);
-            Debug.Log("rb: " + collision.gameObject.GetComponent<Rigidbody2D>());
             if (rb != null)
             {
                 rb.AddForce(launchAngle * launchForce, ForceMode2D.Impulse);
