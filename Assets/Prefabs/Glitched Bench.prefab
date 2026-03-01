@@ -110,8 +110,10 @@ GameObject:
   - component: {fileID: 3271671059739667897}
   - component: {fileID: 2499024348922327253}
   - component: {fileID: 4439008021141581033}
+  - component: {fileID: 4487832488472372584}
   - component: {fileID: 2445463014787686755}
   - component: {fileID: 4937568205286356543}
+  - component: {fileID: 1153981299209650865}
   m_Layer: 0
   m_Name: Glitched Bench
   m_TagString: Untagged
@@ -214,6 +216,39 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   carryOffset: 0.7
+--- !u!114 &4487832488472372584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123925406764919461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998641852dfccca46aae4524ee4f0cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BenchSFX
+  masterVolume: 1
+  sitClip: {fileID: 0}
+  sitPitchRandomize: 1
+  sitPitchRange: {x: 0.92, y: 1.08}
+  sitVolume: 1
+  standClip: {fileID: 0}
+  standPitchRandomize: 1
+  standPitchRange: {x: 0.92, y: 1.08}
+  standVolume: 1
+  pickupClip: {fileID: 0}
+  pickupPitchRandomize: 1
+  pickupPitchRange: {x: 0.9, y: 1.1}
+  pickupVolume: 1
+  putDownClip: {fileID: 0}
+  putDownPitchRandomize: 1
+  putDownPitchRange: {x: 0.88, y: 1.05}
+  putDownVolume: 1
+  carryLoopClip: {fileID: 0}
+  carryLoopPitchRandomize: 0
+  carryLoopPitchRange: {x: 0.95, y: 1.05}
+  carryLoopVolume: 1
 --- !u!50 &2445463014787686755
 Rigidbody2D:
   serializedVersion: 5
@@ -287,3 +322,100 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.75}
   m_EdgeRadius: 0
+--- !u!82 &1153981299209650865
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123925406764919461}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -9,11 +9,18 @@ public class magneticObjectScript : MonoBehaviour
     [SerializeField] float magneticPullStrengthY = 2;
     [SerializeField] float magneticPullStrengthX = 2;
 
-    public GameObject magnetOrigin;
+    public GameObject player;
+    private GameObject magnetOrigin;
+    private magnetTool magnet;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        magnetOrigin = GameObject.FindGameObjectWithTag("MagnetRotationPoint");
+
+        magnet = player.GetComponentInChildren<magnetTool>();
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -30,7 +37,7 @@ public class magneticObjectScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Magnet") && magnetOrigin.GetComponent<magnetTool>().isMagnetActive)
+        if (collider.gameObject.CompareTag("Magnet") && magnet.isMagnetActive)
         {
             isBeingPulled = true;
         }

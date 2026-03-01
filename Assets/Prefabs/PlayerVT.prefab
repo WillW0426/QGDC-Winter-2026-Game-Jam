@@ -5444,8 +5444,10 @@ GameObject:
   - component: {fileID: 6127490061616542063}
   - component: {fileID: 3813249321581667483}
   - component: {fileID: 7563656419107925384}
+  - component: {fileID: 8230109263000116876}
   - component: {fileID: 2275182642483943130}
   - component: {fileID: 4632841891567630091}
+  - component: {fileID: 8274006569467465190}
   m_Layer: 16
   m_Name: PlayerVT
   m_TagString: Player
@@ -5492,7 +5494,10 @@ MonoBehaviour:
   playerModel: {fileID: 7007587945439770482}
   carrying: 0
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 7
+  riseGravity: 1
+  fallGravity: 2.5
+  shortHopGravity: 3
 --- !u!114 &7563656419107925384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5510,6 +5515,38 @@ MonoBehaviour:
   groundChecker: {fileID: 6777507795219726069}
   bodyAnimator: {fileID: 2874218921924915198}
   handAnimator: {fileID: 7114501010152397299}
+--- !u!114 &8230109263000116876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863351750940658815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cca5803b507d904ea4bece324a1328b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSFX
+  masterVolume: 1
+  walkingClip: {fileID: 8300000, guid: 2352822feb4caa14ebdbc0c713289f8d, type: 3}
+  walkPitchRandomize: 1
+  walkPitchRange: {x: 0.9, y: 1.1}
+  walkStepInterval: 0.35
+  walkVolume: 1
+  jumpClip: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  jumpPitchRandomize: 1
+  jumpPitchRange: {x: 1.2, y: 1.3}
+  jumpVolume: 1
+  landClip: {fileID: 8300000, guid: eaae8fe8d600e1f459f34aa5757fa3b8, type: 3}
+  landPitchRandomize: 1
+  landPitchRange: {x: 0.9, y: 1.1}
+  landVolume: 0.7
+  magnetActivateClip: {fileID: 0}
+  magnetLoopClip: {fileID: 8300000, guid: a043c8481d723d04bbf20b000898ffe2, type: 3}
+  magnetDeactivateClip: {fileID: 0}
+  magnetPitchRandomize: 0
+  magnetPitchRange: {x: 0.95, y: 1.05}
+  magnetVolume: 0.1
 --- !u!50 &2275182642483943130
 Rigidbody2D:
   serializedVersion: 5
@@ -5572,8 +5609,105 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.05}
-  m_Size: {x: 0.7, y: 1.03}
+  m_Size: {x: 0.7, y: 1}
   m_Direction: 0
+--- !u!82 &8274006569467465190
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863351750940658815}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5511395097538522859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5919,7 +6053,7 @@ GameObject:
   - component: {fileID: 4698878638998037804}
   m_Layer: 16
   m_Name: Magnet
-  m_TagString: Untagged
+  m_TagString: Magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5933,7 +6067,7 @@ Transform:
   m_GameObject: {fileID: 6560067291782468941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6056,7 +6190,7 @@ Transform:
   m_GameObject: {fileID: 7633317842474922443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: -1}
   m_LocalScale: {x: 4.7999997, y: 4.7999997, z: 4.7999997}
   m_ConstrainProportionsScale: 1
   m_Children:
