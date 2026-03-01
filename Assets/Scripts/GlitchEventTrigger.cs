@@ -16,17 +16,17 @@ public class GlitchEventTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            GlitchController.Instance.TriggerBurst(0.5f, 10f, 0.2f);
+            if (GlitchController.Instance != null) GlitchController.Instance.TriggerBurst(0.5f, 10f, 0.2f);
 
             foreach (GameObject obj in objectsToDestroy)
             {
                 if (obj != null)
                 {
-                    Destroy(obj);
+                    obj.SetActive(false);
                 }
             }
 
