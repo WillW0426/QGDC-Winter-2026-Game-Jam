@@ -20,11 +20,23 @@ public class simulateCramming : MonoBehaviour
     {
         cramNumber += 1;
 
-        if(cramNumber > 1)
+        if (cramNumber > 1)
         {
             collision.gameObject.GetComponentInChildren<oscilate>().enabled = true;
             collision.gameObject.GetComponent<Rigidbody2D>().mass = 5;
             collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0f, 0f);
         }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        cramNumber -= 1;
+
+        
+            collision.gameObject.GetComponentInChildren<oscilate>().enabled = false;
+            collision.gameObject.GetComponent<Rigidbody2D>().mass = 1;
+            
+       
     }
 }
