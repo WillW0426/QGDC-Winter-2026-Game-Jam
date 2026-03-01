@@ -62,7 +62,7 @@ public class BenchScript : MonoBehaviour
 
         if (carryAction.WasPressedThisFrame() && playerNear)
         {
-            if (!beingCarried && !isPlayerCarrying && !isPlayerJumping)
+            if (!beingCarried && !isPlayerCarrying && !isPlayerJumping && !sitting)
             {
                 beingCarried = true;
                 playerObject.GetComponent<PlayerController>().carrying = true;

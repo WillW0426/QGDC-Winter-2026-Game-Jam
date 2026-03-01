@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     [Header("Player Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
+    [SerializeField] private float riseGravity = 5f;
+    [SerializeField] private float fallGravity = 3.5f;
+    [SerializeField] private float shortHopGravity = 8f;
+
+    private bool isJumpHeld;
 
     // Enable action map
     private void OnEnable()
@@ -47,28 +52,50 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        jumpAction.performed += JumpAction_performed;
+        //jumpAction.performed += JumpAction_performed;
+        jumpAction.started += JumpAction_started;
+        jumpAction.canceled += JumpAction_canceled;
     }
 
-    private void JumpAction_performed(InputAction.CallbackContext obj)
+    private void JumpAction_canceled(InputAction.CallbackContext obj)
     {
-        if (groundCheck.GetComponent<groundCheck>().isGrounded == true && !carrying)
+        isJumpHeld = false;
+    }
+
+    private void JumpAction_started(InputAction.CallbackContext obj)
+    {
+        isJumpHeld = true;
+
+        if (groundCheck.GetComponent<groundCheck>().isGrounded && !carrying)
         {
             Jump();
         }
     }
+
+    //private void JumpAction_performed(InputAction.CallbackContext obj)
+    //{
+
+
+    //    //if (groundCheck.GetComponent<groundCheck>().isGrounded == true && !carrying)
+    //    //{
+    //    //    Jump();
+    //    //}
+    //}
 
     // Update is called once per frame
     void Update()
     {
         // get movement inputs
         moveAmount = moveAction.ReadValue<Vector2>();
+        
     }
     
 
     // apply walking movement
     private void FixedUpdate()
     {
+        HandlePlayerJumpGravity();
+
         //rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
         float targetSpeed = moveAmount.x * moveSpeed;
         float acceleration = 20f;
@@ -84,15 +111,36 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        jumpAction.performed -= JumpAction_performed;
+        jumpAction.started -= JumpAction_started;
+        jumpAction.canceled -= JumpAction_canceled;
     }
 
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        GetComponent<PlayerSFX>()?.PlayJumpSFX();
     }
 
-    
+    private void HandlePlayerJumpGravity()
+    {
+        if (rb.linearVelocity.y > 0)
+        {
+            rb.gravityScale = isJumpHeld ? riseGravity : shortHopGravity;
+        }
+        else if (rb.linearVelocity.y < 0)
+        {
+            rb.gravityScale = fallGravity;
+        }
+        else
+        {
+            rb.gravityScale = 1f; // Normal gravity
+        }
+
+        if (groundCheck.GetComponent<groundCheck>().isGrounded && rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        }
+    }
 
 
 }
