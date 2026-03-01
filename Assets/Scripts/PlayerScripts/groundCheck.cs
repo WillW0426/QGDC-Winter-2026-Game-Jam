@@ -14,8 +14,9 @@ public class groundCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.1f);
         // Check if the player is grounded using this collider
-        if (Physics2D.OverlapCircle(transform.position, 0.1f, groundLayerMask))
+        if (hit != null && (hit.gameObject.CompareTag("Ground") || Physics2D.OverlapCircle(transform.position, 0.1f, groundLayerMask)))
         {
             isGrounded = true;
         } else
