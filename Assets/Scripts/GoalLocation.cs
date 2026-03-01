@@ -25,6 +25,7 @@ public class GoalLocation : MonoBehaviour
         {
             setHealth(-20f);
             GlitchController.Instance.TriggerBurst(0.4f, 5f, 0.1f);
+            Debug.Log("Health: " + health);
             if (health <= 0)
             {
                 Loader.Load(NextScene);
