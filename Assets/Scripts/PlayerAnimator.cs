@@ -63,4 +63,11 @@ public class PlayerAnimator : MonoBehaviour
             playerModel.localScale = defaultScale.x * new Vector3(-1, 1, 1);
         }
     }
+
+    //When the Scene is unloaded or the GameObject is destroyed, we need to unsubscribe from the events to prevent memory leaks and potential null reference exceptions.
+    private void OnDestroy()
+    {
+        moveAction.started -= MoveAction_started;
+        moveAction.canceled -= MoveAction_canceled;
+    }
 }
