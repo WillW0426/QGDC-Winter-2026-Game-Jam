@@ -82,8 +82,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 4bbe8db4418d5ed489c7ef2edbad3514, type: 3}
-  m_Color: {r: 0.9176471, g: 0.9803922, b: 0.48627454, a: 1}
+  m_Sprite: {fileID: -1236824391411277200, guid: c73edbb22e721dd4f9d8b565a574cf93, type: 3}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,7 +135,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.65121, y: 0.42542, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6002485881917238772}
@@ -228,4 +228,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::magneticObjectScript
   magneticPullStrengthY: 2
   magneticPullStrengthX: 2
-  magnetOrigin: {fileID: 0}
+  player: {fileID: 0}
