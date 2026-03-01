@@ -387,6 +387,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Magnet
       objectReference: {fileID: 0}
+    - target: {fileID: 4632841891567630091, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4863351750940658815, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
       propertyPath: m_Name
       value: PlayerVT

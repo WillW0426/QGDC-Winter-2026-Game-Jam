@@ -9,6 +9,8 @@ public class CollisionLaunchScript : MonoBehaviour
 
     private Vector3 launchAngle;
 
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
