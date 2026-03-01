@@ -16,6 +16,8 @@ public class BenchScript : MonoBehaviour
     private bool isPlayerCarrying;
     private bool isPlayerJumping;
 
+    private Transform spawnPositon;
+    [SerializeField] private float bottomBound = -100f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +38,7 @@ public class BenchScript : MonoBehaviour
     }
     void Start()
     {
-        
+        spawnPositon = transform;
     }
 
     // Update is called once per frame
@@ -77,6 +79,13 @@ public class BenchScript : MonoBehaviour
         if (beingCarried)
         {
             gameObject.transform.position = playerObject.transform.position + new Vector3(0f, 1 * carryOffset, 0f);
+        }
+
+
+        if (gameObject.transform.position.y <= bottomBound)
+        {
+            gameObject.transform.position = spawnPositon.position;
+            gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
