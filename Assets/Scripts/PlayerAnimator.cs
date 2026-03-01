@@ -41,7 +41,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         bodyAnimator.SetBool("Grounded", groundChecker.isGrounded);
         handAnimator.SetBool("Grounded", groundChecker.isGrounded);
-        handAnimator.SetBool("IsCarrying", playerController.carrying);
+        handAnimator.SetBool("IsHolding", playerController.carrying);
 
         bodyAnimator.SetFloat("YVelocity", rb.linearVelocity.y);
     }

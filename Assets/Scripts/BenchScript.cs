@@ -14,6 +14,7 @@ public class BenchScript : MonoBehaviour
     public float carryOffset = 1;
 
     private bool isPlayerCarrying;
+    private bool isPlayerJumping;
 
 
 
@@ -53,11 +54,15 @@ public class BenchScript : MonoBehaviour
             }
         }
 
-        if (playerObject != null) isPlayerCarrying = playerObject.GetComponent<PlayerController>().carrying;
-
-        if (carryAction.WasPressedThisFrame() && playerNear && isPlayerCarrying)
+        if (playerObject != null)
         {
-            if (!beingCarried)
+            isPlayerCarrying = playerObject.GetComponent<PlayerController>().carrying;
+            isPlayerJumping = playerObject.GetComponent<Rigidbody2D>().linearVelocity.y > 0.1f;
+        }
+
+        if (carryAction.WasPressedThisFrame() && playerNear)
+        {
+            if (!beingCarried && !isPlayerCarrying && !isPlayerJumping)
             {
                 beingCarried = true;
                 playerObject.GetComponent<PlayerController>().carrying = true;
@@ -80,6 +85,7 @@ public class BenchScript : MonoBehaviour
         {
             playerNear = true;
             playerObject = other.gameObject;
+            Debug.Log(playerObject.GetComponent<PlayerController>().carrying);
         }
     }
 
