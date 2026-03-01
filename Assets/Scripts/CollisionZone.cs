@@ -39,6 +39,7 @@ public class CollisionZone : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         collisionCount -= 1;
+        collision.GetComponent<BoxCollider2D>().excludeLayers = 0;
         if (collisionCount < collisionThreshhold)
         {
             boxCollider.enabled = false;
