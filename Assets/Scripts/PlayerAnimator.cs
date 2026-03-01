@@ -9,7 +9,8 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private groundCheck groundChecker;
 
     [Header("Animatiors")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator bodyAnimator;
+    [SerializeField] private Animator handAnimator;
 
     private InputAction moveAction;
     private Rigidbody2D rb;
@@ -34,18 +35,22 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        animator.SetBool("IsGrounded", groundChecker.isGrounded);
-        animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
+        bodyAnimator.SetBool("Grounded", groundChecker.isGrounded);
+        handAnimator.SetBool("Grounded", groundChecker.isGrounded);
+
+        bodyAnimator.SetFloat("YVelocity", rb.linearVelocity.y);
     }
 
     private void MoveAction_canceled(InputAction.CallbackContext obj)
     {
-        animator.SetBool("IsMoving", false);
+        handAnimator.SetBool("IsMoving", false);
+        bodyAnimator.SetBool("IsMoving", false);
     }
 
     private void MoveAction_started(InputAction.CallbackContext obj)
     {
-        animator.SetBool("IsMoving", true);
+        handAnimator.SetBool("IsMoving", true);
+        bodyAnimator.SetBool("IsMoving", true);
 
         Vector2 moveInput = obj.ReadValue<Vector2>();
 

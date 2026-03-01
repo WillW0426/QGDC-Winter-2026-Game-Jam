@@ -69,7 +69,17 @@ public class PlayerController : MonoBehaviour
     // apply walking movement
     private void FixedUpdate()
     {
-            rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
+        //rb.linearVelocity = new Vector2(moveAmount.x * moveSpeed, rb.linearVelocity.y);
+        float targetSpeed = moveAmount.x * moveSpeed;
+        float acceleration = 20f;
+
+        float newX = Mathf.MoveTowards(
+            rb.linearVelocity.x,
+            targetSpeed,
+            acceleration * Time.deltaTime
+        );
+
+        rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
     }
     
     private void Jump()
