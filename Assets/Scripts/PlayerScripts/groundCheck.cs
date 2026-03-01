@@ -14,21 +14,20 @@ public class groundCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Ground"))
+        // Check if the player is grounded using this collider
+        if (Physics2D.OverlapCircle(transform.position, 0.1f, groundLayerMask))
         {
             isGrounded = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Ground"))
+        } else
         {
             isGrounded = false;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 0.1f);
+    }
+
 }
