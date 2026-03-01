@@ -12,6 +12,10 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] Button creditsButton;
 
+    [SerializeField] Button backButton;
+
+    [SerializeField] GameObject subMenu;
+
     [Header("Hover Colors")]
     [SerializeField] private Color normalColor = Color.white;
     [SerializeField] private Color hoverColor = Color.yellow;
@@ -28,9 +32,20 @@ public class MainMenuUI : MonoBehaviour
             Application.Quit();
         });
 
+        creditsButton.onClick.AddListener(() =>
+        {
+            subMenu.SetActive(true);
+        });
+
+        backButton.onClick.AddListener(() =>
+        {
+            subMenu.SetActive(false);
+        });
+
         AddHoverEffect(playButton);
         AddHoverEffect(quitButton);
         AddHoverEffect(creditsButton);
+        AddHoverEffect(backButton);
     }
 
     private void AddHoverEffect(Button button)
