@@ -6,27 +6,52 @@ public class GoalLocation : MonoBehaviour
 
     [Header("Goal Config")]
     [SerializeField] Loader.Scene NextScene;
-    
+    [SerializeField] float maxHealth;
+    [SerializeField] HealthBarUI healthBar;
+
+    private bool isBeingMagnetized = false;
+    private float health;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        healthBar.SetMaxHealth(maxHealth);
+        health = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (isBeingMagnetized)
+        {
+            setHealth(-20f);
+            Debug.Log("Health: " + health);
+            if (health <= 0)
+            {
+                Loader.Load(NextScene);
+            }
+        }
+    }
+
+    private void setHealth(float healthChange)
+    {
+        health += healthChange * Time.deltaTime;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        healthBar.SetHealth(health);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Magnet") && collision.GetComponentInParent<magnetTool>().isMagnetActive)
         {
-            Debug.Log("Player reached the goal!");
-            // Here you can add code to handle what happens when the player reaches the goal,
-            // such as loading the next level, showing a victory screen, etc.
-            Loader.Load(NextScene);
+            isBeingMagnetized = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Magnet"))
+        {
+            isBeingMagnetized = false;
         }
     }
 }

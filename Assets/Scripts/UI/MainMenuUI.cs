@@ -20,7 +20,7 @@ public class MainMenuUI : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.TileMapTestScene);
+            Loader.Load(Loader.Scene.Level1);
         });
 
         quitButton.onClick.AddListener(() =>

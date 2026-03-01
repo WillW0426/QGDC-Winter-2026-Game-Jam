@@ -291,7 +291,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -383,17 +383,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2256031295445515488, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
+      propertyPath: m_Size.x
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3742253792094800862, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
       propertyPath: m_TagString
       value: Magnet
       objectReference: {fileID: 0}
     - target: {fileID: 4632841891567630091, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
       propertyPath: m_Size.x
-      value: 0.7
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 4863351750940658815, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
       propertyPath: m_Name
       value: PlayerVT
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863351750940658815, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6127490061616542063, guid: 317564862f4f8c44ca61d55130074eea, type: 3}
       propertyPath: m_LocalPosition.x

@@ -81,11 +81,20 @@ public class PlayerController : MonoBehaviour
 
         rb.linearVelocity = new Vector2(newX, rb.linearVelocity.y);
     }
-    
+
+    private void OnDestroy()
+    {
+        jumpAction.performed -= JumpAction_performed;
+    }
+
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    
+    private void OnDestroy()
+    {
+    }
+
+
 }
