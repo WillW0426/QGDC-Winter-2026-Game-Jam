@@ -60,27 +60,25 @@ public class magnetTool : MonoBehaviour
             magnetModel.SetActive(true);
 
             // turn on / off magnet on button press by enabling and disabling the GameObject that contains the magnet collider and sprite renderer
-            if (useMagnetAction.WasPressedThisFrame())
+            if (useMagnetAction.IsPressed())
             {
-                if (isMagnetActive)
-                {
-                    //magnetColliderSprite.enabled = false;
-                    //magnetCollider.enabled = false;
+                //magnetColliderSprite.enabled = false;
+                //magnetCollider.enabled = false;
 
-                    magnetRangeObject.SetActive(false);
+                magnetRangeObject.SetActive(true);
 
-                    isMagnetActive = false;
-                }
-                else
-                {
-                    //magnetColliderSprite.enabled = true;
-                    //magnetCollider.enabled = true;
-
-                    magnetRangeObject.SetActive(true);
-
-                    isMagnetActive = true;
-                }
+                isMagnetActive = true;
             }
+            else
+            {
+                //magnetColliderSprite.enabled = true;
+                //magnetCollider.enabled = true;
+
+                magnetRangeObject.SetActive(false);
+
+                isMagnetActive = false;
+            }
+            
 
         }
 

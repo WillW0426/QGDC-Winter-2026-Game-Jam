@@ -4,7 +4,7 @@ public static class Loader
 {
     public enum Scene
     {
-        MainMenu,
+        MainMenuScene,
         LoadingScene,
         TileMapTestScene,
         Level1,
