@@ -29,6 +29,8 @@ public class GlitchEventTrigger : MonoBehaviour
                     Destroy(obj);
                 }
             }
+
+            gameObject.SetActive(false);
         }
     }
 }
