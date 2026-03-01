@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TileMap Test Scene.unity
     guid: 3401e5170a6481e4faababccab057730
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/Levels/Level1.unity
     guid: d2009a924136ab046aff1c41b9627fdd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
