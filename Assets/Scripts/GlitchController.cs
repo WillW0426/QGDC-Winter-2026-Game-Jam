@@ -50,7 +50,7 @@ public class GlitchController : MonoBehaviour
         StartCoroutine(GlitchBurst(intensity, speed, duration));
     }
 
-    IEnumerator GlitchBurst(float intensity, float speed, float duration)
+    public IEnumerator GlitchBurst(float intensity, float speed, float duration)
     {
         glitchFeature.SetActive(true);
         SetGlitch(intensity, speed);

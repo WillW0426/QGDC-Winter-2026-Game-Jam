@@ -28,7 +28,7 @@ Material:
     - _BlockSize: 0.05
     - _ChromaOffset: 0.008
     - _DigitalNoise: 0.05
-    - _GlitchIntensity: 0
+    - _GlitchIntensity: 0.4
     - _GlitchSpeed: 5
     - _TearStrength: 0.02
     m_Colors: []

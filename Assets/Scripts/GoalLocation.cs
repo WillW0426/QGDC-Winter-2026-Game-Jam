@@ -24,7 +24,7 @@ public class GoalLocation : MonoBehaviour
         if (isBeingMagnetized)
         {
             setHealth(-20f);
-            Debug.Log("Health: " + health);
+            GlitchController.Instance.TriggerBurst(0.4f, 5f, 0.1f);
             if (health <= 0)
             {
                 Loader.Load(NextScene);
@@ -44,6 +44,7 @@ public class GoalLocation : MonoBehaviour
         if (collision.CompareTag("Magnet") && collision.GetComponentInParent<magnetTool>().isMagnetActive)
         {
             isBeingMagnetized = true;
+            
         }
     }
 
