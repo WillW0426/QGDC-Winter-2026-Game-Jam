@@ -6053,7 +6053,7 @@ GameObject:
   - component: {fileID: 4698878638998037804}
   m_Layer: 16
   m_Name: Magnet
-  m_TagString: Untagged
+  m_TagString: Magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
