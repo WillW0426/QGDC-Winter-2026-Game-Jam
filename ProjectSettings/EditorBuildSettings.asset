@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: 3c672c72e4ef3b34cb489f49aea920ee
   - enabled: 1
-    path: Assets/Scenes/TileMap Test Scene.unity
-    guid: 3401e5170a6481e4faababccab057730
-  - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: d2009a924136ab046aff1c41b9627fdd
   - enabled: 1

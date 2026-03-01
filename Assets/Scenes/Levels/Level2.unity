@@ -220,7 +220,8 @@ PrefabInstance:
     - target: {fileID: 2249668100567457388, guid: 00aaa595b66fa1b4b97d9add0e5fc353, type: 3}
       propertyPath: m_text
       value: The other day my friend sat on a chair and they said they felt like
-        they moved a few pixels... weird
+        they moved a few pixels... weird anyways press E to sit/Stand (F) to pick
+        up the chair
       objectReference: {fileID: 0}
     - target: {fileID: 2249668100567457388, guid: 00aaa595b66fa1b4b97d9add0e5fc353, type: 3}
       propertyPath: m_fontSize
@@ -954,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080964363258243738, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3.0505798
       objectReference: {fileID: 0}
     - target: {fileID: 3080964363258243738, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -962,11 +963,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080964363258243738, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.4823
       objectReference: {fileID: 0}
     - target: {fileID: 8099765045955402586, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
       propertyPath: m_Name
       value: PressurePlateDoor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593509671500518653, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9672213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593509671500518653, guid: 96ee19342776dc047ac72d220eed8e92, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.48361063
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

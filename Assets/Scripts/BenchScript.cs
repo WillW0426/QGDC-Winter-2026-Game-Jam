@@ -73,6 +73,7 @@ public class BenchScript : MonoBehaviour
             {
                 beingCarried = false;
                 playerObject.GetComponent<PlayerController>().carrying = false;
+                gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             }
         }
 
