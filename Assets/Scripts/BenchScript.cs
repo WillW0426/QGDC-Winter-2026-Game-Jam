@@ -11,7 +11,7 @@ public class BenchScript : MonoBehaviour
     public InputActionAsset inputActions;
     private InputAction interactAction;
     private InputAction carryAction;
-    public float carryOffset = 1;
+    private float carryOffset = 1.1f;
 
     private bool isPlayerCarrying;
     private bool isPlayerJumping;
@@ -67,12 +67,12 @@ public class BenchScript : MonoBehaviour
             if (!beingCarried && !isPlayerCarrying && !isPlayerJumping && !sitting)
             {
                 beingCarried = true;
-                isPlayerCarrying = true;
+                playerObject.GetComponent<PlayerController>().carrying = true;
             }
             else
             {
                 beingCarried = false;
-                isPlayerCarrying = false;
+                playerObject.GetComponent<PlayerController>().carrying = false;
                 gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             }
         }
