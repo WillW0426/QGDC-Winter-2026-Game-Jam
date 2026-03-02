@@ -14,10 +14,14 @@ public class RestLevelButtonUI : MonoBehaviour
 
     public Loader.Scene resetScene;
 
+    private LevelManager levelManager;
+
     private void Awake()
     {
+        levelManager = FindFirstObjectByType<LevelManager>();
+
         resetButton.onClick.AddListener(() =>
-            Loader.Load(resetScene)
+            levelManager.Restart()
         );
 
         AddHoverEffect(resetButton);

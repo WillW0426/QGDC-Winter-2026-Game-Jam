@@ -8,6 +8,7 @@ TagManager:
   - Magnetic
   - Magnet
   - MagnetRotationPoint
+  - KillBox
   layers:
   - Default
   - TransparentFX

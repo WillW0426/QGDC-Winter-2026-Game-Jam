@@ -67,12 +67,12 @@ public class BenchScript : MonoBehaviour
             if (!beingCarried && !isPlayerCarrying && !isPlayerJumping && !sitting)
             {
                 beingCarried = true;
-                playerObject.GetComponent<PlayerController>().carrying = true;
+                isPlayerCarrying = true;
             }
             else
             {
                 beingCarried = false;
-                playerObject.GetComponent<PlayerController>().carrying = false;
+                isPlayerCarrying = false;
                 gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             }
         }
@@ -101,11 +101,10 @@ public class BenchScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !beingCarried)
         {
             playerNear = false;
             playerObject = null;
-            isPlayerCarrying = false;
         }
     }
     private void sit()
